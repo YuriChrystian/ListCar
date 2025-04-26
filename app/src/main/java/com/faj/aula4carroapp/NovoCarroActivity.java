@@ -48,7 +48,10 @@ public class NovoCarroActivity extends AppCompatActivity {
 
         btnCadastrar = findViewById(R.id.btn_inserir);
 
-        action.setOnClickListener(v -> finish());
+        action.setOnClickListener(v -> {
+            setResult(Activity.RESULT_CANCELED);
+            finish();
+        });
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

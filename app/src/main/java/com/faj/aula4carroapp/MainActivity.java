@@ -71,8 +71,12 @@ public class MainActivity extends AppCompatActivity implements CarrosAdapter.Lis
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        if (data == null) {
+            return;
+        }
+
         Bundle bundle = data.getBundleExtra("novocarro");
-        if (resultCode == Activity.RESULT_OK && bundle != null) {
+        if (resultCode == Activity.RESULT_OK && data != null) {
             carros.add(new CarroModel(bundle));
         }
     }
