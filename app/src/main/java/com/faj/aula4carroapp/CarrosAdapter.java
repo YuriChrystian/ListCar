@@ -70,7 +70,7 @@ public class CarrosAdapter extends ArrayAdapter<CarroModel> {
             }
         });
 
-        modelo.setText(carro.getModelo());
+        modelo.setText(carro.getModelo()+" ( " + carro.getAno() + " )");
         placa.setText(carro.getPlaca());
         estado.setText(carro.getEstadoConservacao());
 
